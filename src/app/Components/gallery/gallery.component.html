@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2 class="text-center">Explore Our Movie Collection</h2>
+
+  <!-- Featured Movies Section -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h3>Featured Movies</h3>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let movie of featuredMovies">
+          <div class="card movie-card">
+            <img
+              [src]="movie.poster_path"
+              class="card-img-top"
+              alt="{{ movie.title }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.genre }}</p>
+              <button class="btn btn-primary" (click)="viewDetails(movie)">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

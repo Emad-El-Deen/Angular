@@ -1,0 +1,80 @@
+<div class="py-3 col-md-6 mx-auto">
+  <h2 class="text-center fw-bold mb-3 text-success">Add Product</h2>
+  <form [formGroup]="myForm" (ngSubmit)="saveMovie()">
+    
+    <!-- Product Name -->
+    <div class="form-floating mb-3">
+      <input
+        id="name"
+        value=""
+        name="name"
+        type="text"
+        class="form-control border-0 border-bottom"
+        formControlName="name"
+        placeholder="name"
+      />
+      <label for="name">Enter Product Name:</label>
+    </div>
+
+    <!-- Product Description -->
+    <div class="form-floating mb-3">
+      <textarea
+        id="desc"
+        name="desc"
+        class="form-control border-0 border-bottom"
+        formControlName="desc"
+        placeholder="desc"
+        style="height: 100px"
+      ></textarea>
+      <label for="desc">Enter Product Description:</label>
+    </div>
+
+    <!-- Product Price -->
+    <div class="form-floating mb-3">
+      <input
+        id="price"
+        value=""
+        name="price"
+        type="number"
+        class="form-control border-0 border-bottom"
+        formControlName="price"
+        placeholder="price"
+      />
+      <label for="price">Enter Product Price:</label>
+    </div>
+
+    <!-- Product Rate -->
+    <div class="form-floating mb-3">
+      <input
+        id="rate"
+        value=""
+        name="rate"
+        type="number"
+        class="form-control border-0 border-bottom"
+        formControlName="rate"
+        placeholder="rate"
+        min="0"
+        max="5"
+      />
+      <label for="rate">Enter Product Rate (0 to 5):</label>
+    </div>
+
+    <!-- Product Image -->
+    <div class="form-floating mb-3">
+      <input
+        id="image"
+        value=""
+        name="image"
+        type="file"
+        class="form-control border-0 border-bottom"
+        (change)="fileChange($event)"
+      />
+      <label for="image">Upload Product Image:</label>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-flex align-items-center">
+      <button type="submit" class="btn my-4 btn-success">Save Product</button>
+    </div>
+  </form>
+</div>

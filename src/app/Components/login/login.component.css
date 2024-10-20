@@ -1,0 +1,10 @@
+.none:focus{
+  box-shadow: none;
+  border-color: green !important;
+  }
+
+a
+{
+  color: black;
+  text-decoration: none;
+}

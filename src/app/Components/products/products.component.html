@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row g-3">
+    @for (movie of movies; track $index) {
+    <div class="col-md-3">
+      <div class="bg-body-tertiary rounded border-0 p-3 position-relative">
+        <div class="text-center">
+          <img
+            src="http://localhost:3000/images/{{ movie.image }}"
+            alt=""
+            class="rounded img-fluid"
+          />
+        </div>
+        <h3>{{ movie.name }}</h3>
+        <h5 class="">Desc: {{ movie.desc }}</h5>
+        <h5>
+          <ng-container *ngFor="let rate of [1, 2, 3, 4, 5]; let i = index">
+            <i
+              [ngClass]="
+                movie.rate >= rate
+                  ? 'fa fa-star text-warning'
+                  : 'fa fa-star text-secondary'
+              "
+              [attr.key]="i"
+            ></i>
+          </ng-container>
+
+          <span class="bg-info-subtle mx-3 rounded px-1">{{ movie.rate }}</span>
+        </h5>
+        <h4>{{ movie.price }}$</h4>
+        <button
+          class="w-100 btn btn-outline-danger"
+          (click)="deleteMovie(movie._id)"
+        >
+          delete
+        </button>
+
+
+      </div>
+    </div>
+    }
+  </div>
+</div>
